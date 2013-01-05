@@ -1,6 +1,6 @@
 {
   "name": "Force HD for YouTube",
-  "version": "0.0.0.4",
+  "version": "0.0.0.8",
   "manifest_version": 2,
   "description": "Forces all videos played through YouTube to HD if possible.",
   "icons": { "16": "image16.png",
@@ -11,9 +11,10 @@
   ],
   "content_scripts": [
     {
-      "matches": ["http://*.youtube.com/watch?*"],
+      "matches": ["http://*.youtube.com/watch?*", "https://*.youtube.com/watch?*"],
       "js": ["hdizer.js"],
-      "run_at": "document_start"
+      "run_at": "document_idle",
+      "all_frames": true
     }
   ]
 }
